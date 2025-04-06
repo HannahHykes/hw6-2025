@@ -35,8 +35,12 @@ window.addEventListener("load", function () {
     playButton.addEventListener("click", function () {
         video.play();
         // Update volume display (as percent)
+
+		video.volume = volumeSlider.value / 100;
+
         const volumePercent = Math.round(video.volume * 100);
         volumeDisplay.innerHTML = volumePercent + "%";
+		
     });
 
 	pauseButton.addEventListener("click", function (){
@@ -76,9 +80,10 @@ window.addEventListener("load", function () {
 	})
 
 	volumeSlider.addEventListener("input", function () {
-		const volumeValue = volumeSlider.value;
-		video.volumne = volumeValue / 100;
-		volumeDisplay.innerHTML = volumeValue + "%";
+		const newVolume = volumeSlider.value / 100;
+		video.volume = newVolume;
+		volumeDisplay.innerHTML = (newVolume * 100) + "%";
+		
 	})
 
 	vintageButton.addEventListener("click", function() {
