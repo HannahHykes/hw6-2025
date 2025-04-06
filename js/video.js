@@ -29,7 +29,7 @@ window.addEventListener("load", function () {
     video.loop = false;
     video.load();
 
-	volumeDisplay.innerHTML = Math.round(video.volume * 100) + "%";
+	// volumeDisplay.innerHTML = Math.round(video.volume * 100) + "%";
 
     // Play button functionality
     playButton.addEventListener("click", function () {
